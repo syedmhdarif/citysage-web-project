@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Hero from "@/components/Hero";
+import ScrollReveal from "@/components/ScrollReveal";
 
 export const metadata: Metadata = {
   title: "About CitySage — Our Mission, Team & Vision for Smarter Cities",
@@ -118,12 +119,14 @@ export default function AboutPage() {
 
       {/* Overview */}
       <section className="mx-auto max-w-4xl px-4 py-12 sm:px-6 sm:py-20">
-        <p className="text-md leading-relaxed text-muted">
-          Founded by visionary leaders in urban development and AI, CitySage aims to drive sustainable
-          urban development by providing innovative solutions that align with ESG principles and Net Zero
-          goals. We empower cities to make informed decisions and build resilient, environmentally
-          conscious urban spaces.
-        </p>
+        <ScrollReveal>
+          <p className="text-md leading-relaxed text-muted">
+            Founded by visionary leaders in urban development and AI, CitySage aims to drive sustainable
+            urban development by providing innovative solutions that align with ESG principles and Net Zero
+            goals. We empower cities to make informed decisions and build resilient, environmentally
+            conscious urban spaces.
+          </p>
+        </ScrollReveal>
       </section>
 
       <div className="h-px bg-gradient-to-r from-transparent via-accent/15 to-transparent" />
@@ -134,7 +137,7 @@ export default function AboutPage() {
         <div className="relative mx-auto max-w-5xl">
           <div className="grid gap-12 md:grid-cols-2">
             {/* Vision */}
-            <div>
+            <ScrollReveal>
               <p className="mb-3 font-mono text-[10px] uppercase tracking-[0.3em] text-accent/40">// Vision</p>
               <h2 className="text-2xl font-bold text-foreground-bright sm:text-3xl md:text-4xl">Our Vision</h2>
               <p className="mt-4 text-md leading-relaxed text-muted">
@@ -144,10 +147,10 @@ export default function AboutPage() {
                 achieve a balanced integration of human and ecological needs, powered by AI-driven
                 technology.
               </p>
-            </div>
+            </ScrollReveal>
 
             {/* Mission */}
-            <div>
+            <ScrollReveal delay={0.15}>
               <p className="mb-3 font-mono text-[10px] uppercase tracking-[0.3em] text-accent/40">// Mission</p>
               <h2 className="text-2xl font-bold text-foreground-bright sm:text-3xl md:text-4xl">Our Mission</h2>
               <p className="mt-4 text-md leading-relaxed text-muted">
@@ -156,7 +159,7 @@ export default function AboutPage() {
                 resilience, and sustainable growth — empowering cities and planners with innovative
                 tools that enhance urban planning and improve infrastructure resilience.
               </p>
-            </div>
+            </ScrollReveal>
           </div>
         </div>
       </section>
@@ -165,24 +168,25 @@ export default function AboutPage() {
 
       {/* CITYSAGE Core Values */}
       <section className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-20">
-        <p className="mb-3 text-center font-mono text-[10px] uppercase tracking-[0.3em] text-accent/40">// Principles</p>
-        <h2 className="text-center text-2xl font-bold text-foreground-bright sm:text-3xl md:text-4xl">Our Core Values</h2>
-        <p className="mx-auto mt-3 max-w-4xl text-center text-base text-muted sm:text-lg">
-          The acronym <span className="font-semibold text-accent">CITYSAGE</span> encapsulates the principles that drive everything we do.
-        </p>
+        <ScrollReveal>
+          <p className="mb-3 text-center font-mono text-[10px] uppercase tracking-[0.3em] text-accent/40">// Principles</p>
+          <h2 className="text-center text-2xl font-bold text-foreground-bright sm:text-3xl md:text-4xl">Our Core Values</h2>
+          <p className="mx-auto mt-3 max-w-4xl text-center text-base text-muted sm:text-lg">
+            The acronym <span className="font-semibold text-accent">CITYSAGE</span> encapsulates the principles that drive everything we do.
+          </p>
+        </ScrollReveal>
         <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-          {values.map((v) => (
-            <div
-              key={v.letter}
-              className="group relative overflow-hidden rounded border border-border bg-card p-5 transition-all duration-300 hover:border-accent/30 hover:shadow-[0_0_20px_rgba(74,222,128,0.06)]"
-            >
-              <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-transparent to-transparent transition-all duration-300 group-hover:via-accent/40" />
-              <span className="inline-block rounded border border-accent/20 bg-accent/5 px-3 py-1 font-mono text-lg font-bold text-accent">
-                {v.letter}
-              </span>
-              <h3 className="mt-3 text-lg font-semibold text-foreground-bright">{v.word}</h3>
-              <p className="mt-2 text-md leading-relaxed text-muted">{v.desc}</p>
-            </div>
+          {values.map((v, i) => (
+            <ScrollReveal key={v.letter} delay={i * 0.06}>
+              <div className="group relative h-full overflow-hidden rounded border border-border bg-card p-5 transition-all duration-300 hover:border-accent/30 hover:shadow-[0_0_20px_rgba(74,222,128,0.06)]">
+                <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-transparent to-transparent transition-all duration-300 group-hover:via-accent/40" />
+                <span className="inline-block rounded border border-accent/20 bg-accent/5 px-3 py-1 font-mono text-lg font-bold text-accent">
+                  {v.letter}
+                </span>
+                <h3 className="mt-3 text-lg font-semibold text-foreground-bright">{v.word}</h3>
+                <p className="mt-2 text-md leading-relaxed text-muted">{v.desc}</p>
+              </div>
+            </ScrollReveal>
           ))}
         </div>
       </section>
@@ -192,7 +196,7 @@ export default function AboutPage() {
       {/* Culture */}
       <section className="relative bg-background-alt px-4 py-12 sm:px-6 sm:py-20">
         <div className="pointer-events-none absolute inset-0 bg-grid-dot opacity-20" />
-        <div className="relative mx-auto max-w-3xl text-center">
+        <ScrollReveal className="relative mx-auto max-w-3xl text-center">
           <p className="mb-3 font-mono text-[10px] uppercase tracking-[0.3em] text-accent/40">// Culture</p>
           <h2 className="text-2xl font-bold text-foreground-bright sm:text-3xl md:text-4xl">Our Culture</h2>
           <p className="mt-6 text-md leading-relaxed text-muted">
@@ -201,29 +205,30 @@ export default function AboutPage() {
             We thrive where integrity meets ingenuity, and every individual helps shape the future of
             cities and technology.
           </p>
-        </div>
+        </ScrollReveal>
       </section>
 
       <div className="h-px bg-gradient-to-r from-transparent via-accent/15 to-transparent" />
 
       {/* Leadership Quotes */}
       <section className="mx-auto max-w-4xl px-4 py-12 sm:px-6 sm:py-20">
-        <p className="mb-3 text-center font-mono text-[10px] uppercase tracking-[0.3em] text-accent/40">// Perspectives</p>
-        <h2 className="text-center text-2xl font-bold text-foreground-bright sm:text-3xl md:text-4xl">Leadership Perspective</h2>
+        <ScrollReveal>
+          <p className="mb-3 text-center font-mono text-[10px] uppercase tracking-[0.3em] text-accent/40">// Perspectives</p>
+          <h2 className="text-center text-2xl font-bold text-foreground-bright sm:text-3xl md:text-4xl">Leadership Perspective</h2>
+        </ScrollReveal>
         <div className="mt-12 grid gap-8 md:grid-cols-2">
-          {quotes.map((q) => (
-            <blockquote
-              key={q.author}
-              className="relative rounded border border-border bg-card p-6"
-            >
-              <span className="absolute -top-3 left-4 font-mono text-4xl leading-none text-accent/20">&ldquo;</span>
-              <p className="text-md italic leading-relaxed text-muted">
-                {q.text}
-              </p>
-              <footer className="mt-4 font-mono text-sm text-accent">
-                — {q.author}
-              </footer>
-            </blockquote>
+          {quotes.map((q, i) => (
+            <ScrollReveal key={q.author} delay={i * 0.12}>
+              <blockquote className="relative rounded border border-border bg-card p-6">
+                <span className="absolute -top-3 left-4 font-mono text-4xl leading-none text-accent/20">&ldquo;</span>
+                <p className="text-md italic leading-relaxed text-muted">
+                  {q.text}
+                </p>
+                <footer className="mt-4 font-mono text-sm text-accent">
+                  — {q.author}
+                </footer>
+              </blockquote>
+            </ScrollReveal>
           ))}
         </div>
       </section>
@@ -235,11 +240,13 @@ export default function AboutPage() {
         <div className="pointer-events-none absolute inset-0 bg-grid-dot opacity-30" />
         <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-accent/20 to-transparent" />
         <div className="relative mx-auto grid max-w-5xl gap-6 grid-cols-2 lg:grid-cols-4 sm:gap-8">
-          {stats.map((s) => (
-            <div key={s.label} className="text-center">
-              <p className="text-glow font-mono text-4xl font-extrabold text-accent">{s.value}</p>
-              <p className="mt-1 font-mono text-xs uppercase tracking-wider text-muted">{s.label}</p>
-            </div>
+          {stats.map((s, i) => (
+            <ScrollReveal key={s.label} delay={i * 0.1}>
+              <div className="text-center">
+                <p className="text-glow font-mono text-4xl font-extrabold text-accent">{s.value}</p>
+                <p className="mt-1 font-mono text-xs uppercase tracking-wider text-muted">{s.label}</p>
+              </div>
+            </ScrollReveal>
           ))}
         </div>
       </section>
@@ -248,48 +255,49 @@ export default function AboutPage() {
 
       {/* Team */}
       <section className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-20">
-        <p className="mb-3 text-center font-mono text-[10px] uppercase tracking-[0.3em] text-accent/40">// Leadership</p>
-        <h2 className="text-center text-2xl font-bold text-foreground-bright sm:text-3xl md:text-4xl">Meet Our Team</h2>
-        <p className="mx-auto mt-3 max-w-4xl text-center text-base text-muted sm:text-lg">
-          The people building the future of urban intelligence.
-        </p>
+        <ScrollReveal>
+          <p className="mb-3 text-center font-mono text-[10px] uppercase tracking-[0.3em] text-accent/40">// Leadership</p>
+          <h2 className="text-center text-2xl font-bold text-foreground-bright sm:text-3xl md:text-4xl">Meet Our Team</h2>
+          <p className="mx-auto mt-3 max-w-4xl text-center text-base text-muted sm:text-lg">
+            The people building the future of urban intelligence.
+          </p>
+        </ScrollReveal>
 
         <div className="mt-10 grid gap-6 sm:grid-cols-2 md:grid-cols-3">
-          {team.map((member) => (
-            <div
-              key={member.name}
-              className="group relative overflow-hidden rounded border border-border bg-card transition-all duration-300 hover:border-accent/30 hover:shadow-[0_0_20px_rgba(74,222,128,0.06)]"
-            >
-              <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-transparent to-transparent transition-all duration-300 group-hover:via-accent/40" />
-              <div className="relative aspect-[4/3] w-full overflow-hidden bg-background">
-                <img
-                  src={member.image}
-                  alt={`${member.name}, ${member.role} at CitySage`}
-                  className="h-full w-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-card via-transparent to-transparent" />
+          {team.map((member, i) => (
+            <ScrollReveal key={member.name} delay={i * 0.12}>
+              <div className="group relative h-full overflow-hidden rounded border border-border bg-card transition-all duration-300 hover:border-accent/30 hover:shadow-[0_0_20px_rgba(74,222,128,0.06)]">
+                <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-transparent to-transparent transition-all duration-300 group-hover:via-accent/40" />
+                <div className="relative aspect-[4/3] w-full overflow-hidden bg-background">
+                  <img
+                    src={member.image}
+                    alt={`${member.name}, ${member.role} at CitySage`}
+                    className="h-full w-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-card via-transparent to-transparent" />
+                </div>
+                <div className="p-6">
+                  <span className="inline-block rounded border border-accent/20 bg-accent/5 px-2.5 py-0.5 font-mono text-[10px] uppercase tracking-wider text-accent">
+                    {member.role}
+                  </span>
+                  <h3 className="mt-3 text-lg font-semibold text-foreground-bright">
+                    {member.name}
+                    {member.suffix && (
+                      <span className="ml-1 text-sm font-normal text-muted">({member.suffix})</span>
+                    )}
+                  </h3>
+                  <p className="mt-2 text-md leading-relaxed text-muted">{member.bio}</p>
+                  <ul className="mt-4 space-y-2">
+                    {member.highlights.map((h) => (
+                      <li key={h} className="flex gap-2 text-sm text-muted">
+                        <span className="mt-1.5 h-1 w-1 flex-shrink-0 rounded-full bg-accent/40" />
+                        {h}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
               </div>
-              <div className="p-6">
-                <span className="inline-block rounded border border-accent/20 bg-accent/5 px-2.5 py-0.5 font-mono text-[10px] uppercase tracking-wider text-accent">
-                  {member.role}
-                </span>
-                <h3 className="mt-3 text-lg font-semibold text-foreground-bright">
-                  {member.name}
-                  {member.suffix && (
-                    <span className="ml-1 text-sm font-normal text-muted">({member.suffix})</span>
-                  )}
-                </h3>
-                <p className="mt-2 text-md leading-relaxed text-muted">{member.bio}</p>
-                <ul className="mt-4 space-y-2">
-                  {member.highlights.map((h) => (
-                    <li key={h} className="flex gap-2 text-sm text-muted">
-                      <span className="mt-1.5 h-1 w-1 flex-shrink-0 rounded-full bg-accent/40" />
-                      {h}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </div>
+            </ScrollReveal>
           ))}
         </div>
       </section>
@@ -300,45 +308,46 @@ export default function AboutPage() {
       <section className="relative bg-background-alt px-4 py-12 sm:px-6 sm:py-20">
         <div className="pointer-events-none absolute inset-0 bg-grid-dot opacity-20" />
         <div className="relative mx-auto max-w-4xl">
-          <p className="mb-3 text-center font-mono text-[10px] uppercase tracking-[0.3em] text-accent/40">// Advisors</p>
-          <h2 className="text-center text-2xl font-bold text-foreground-bright sm:text-3xl md:text-4xl">Our Advisors</h2>
+          <ScrollReveal>
+            <p className="mb-3 text-center font-mono text-[10px] uppercase tracking-[0.3em] text-accent/40">// Advisors</p>
+            <h2 className="text-center text-2xl font-bold text-foreground-bright sm:text-3xl md:text-4xl">Our Advisors</h2>
+          </ScrollReveal>
 
           <div className="mt-12 grid gap-6 md:grid-cols-2">
-            {advisors.map((advisor) => (
-              <div
-                key={advisor.name}
-                className="group relative overflow-hidden rounded border border-border bg-card transition-all duration-300 hover:border-accent/30 hover:shadow-[0_0_20px_rgba(74,222,128,0.06)]"
-              >
-                <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-transparent to-transparent transition-all duration-300 group-hover:via-accent/40" />
-                <div className="relative aspect-[4/3] w-full overflow-hidden bg-background">
-                  <img
-                    src={advisor.image}
-                    alt={`${advisor.name}, ${advisor.role} at CitySage`}
-                    className="h-full w-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-card via-transparent to-transparent" />
+            {advisors.map((advisor, i) => (
+              <ScrollReveal key={advisor.name} delay={i * 0.12}>
+                <div className="group relative h-full overflow-hidden rounded border border-border bg-card transition-all duration-300 hover:border-accent/30 hover:shadow-[0_0_20px_rgba(74,222,128,0.06)]">
+                  <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-transparent to-transparent transition-all duration-300 group-hover:via-accent/40" />
+                  <div className="relative aspect-[4/3] w-full overflow-hidden bg-background">
+                    <img
+                      src={advisor.image}
+                      alt={`${advisor.name}, ${advisor.role} at CitySage`}
+                      className="h-full w-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-card via-transparent to-transparent" />
+                  </div>
+                  <div className="p-6">
+                    <span className="inline-block rounded border border-accent/20 bg-accent/5 px-2.5 py-0.5 font-mono text-[10px] uppercase tracking-wider text-accent">
+                      {advisor.role}
+                    </span>
+                    <h3 className="mt-3 text-lg font-semibold text-foreground-bright">
+                      {advisor.name}
+                      {advisor.suffix && (
+                        <span className="ml-1 text-sm font-normal text-muted">({advisor.suffix})</span>
+                      )}
+                    </h3>
+                    <p className="mt-2 text-md leading-relaxed text-muted">{advisor.bio}</p>
+                    <ul className="mt-4 space-y-2">
+                      {advisor.highlights.map((h) => (
+                        <li key={h} className="flex gap-2 text-sm text-muted">
+                          <span className="mt-1.5 h-1 w-1 flex-shrink-0 rounded-full bg-accent/40" />
+                          {h}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
                 </div>
-                <div className="p-6">
-                  <span className="inline-block rounded border border-accent/20 bg-accent/5 px-2.5 py-0.5 font-mono text-[10px] uppercase tracking-wider text-accent">
-                    {advisor.role}
-                  </span>
-                  <h3 className="mt-3 text-lg font-semibold text-foreground-bright">
-                    {advisor.name}
-                    {advisor.suffix && (
-                      <span className="ml-1 text-sm font-normal text-muted">({advisor.suffix})</span>
-                    )}
-                  </h3>
-                  <p className="mt-2 text-md leading-relaxed text-muted">{advisor.bio}</p>
-                  <ul className="mt-4 space-y-2">
-                    {advisor.highlights.map((h) => (
-                      <li key={h} className="flex gap-2 text-sm text-muted">
-                        <span className="mt-1.5 h-1 w-1 flex-shrink-0 rounded-full bg-accent/40" />
-                        {h}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
+              </ScrollReveal>
             ))}
           </div>
         </div>

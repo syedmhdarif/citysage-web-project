@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Hero from "@/components/Hero";
 import Card from "@/components/Card";
+import ScrollReveal from "@/components/ScrollReveal";
 import { projects } from "@/lib/data";
 
 export const metadata: Metadata = {
@@ -26,14 +27,15 @@ export default function ProjectPage() {
 
       <section className="mx-auto max-w-7xl px-4 py-20 sm:px-6">
         <div className="grid gap-8 sm:grid-cols-2">
-          {projects.map((p) => (
-            <Card
-              key={p.title}
-              title={p.title}
-              description={p.description}
-              badge={p.category}
-              image={p.image}
-            />
+          {projects.map((p, i) => (
+            <ScrollReveal key={p.title} delay={i * 0.1}>
+              <Card
+                title={p.title}
+                description={p.description}
+                badge={p.category}
+                image={p.image}
+              />
+            </ScrollReveal>
           ))}
         </div>
       </section>

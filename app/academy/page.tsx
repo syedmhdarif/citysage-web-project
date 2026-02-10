@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Hero from "@/components/Hero";
+import ScrollReveal from "@/components/ScrollReveal";
 
 export const metadata: Metadata = {
   title: "CitySage Academy — Smart City Training & Professional Certification",
@@ -127,17 +128,19 @@ export default function AcademyPage() {
 
       {/* Introduction */}
       <section className="mx-auto max-w-4xl px-4 py-12 sm:px-6 sm:py-20">
-        <p className="text-md leading-relaxed text-muted">
-          CitySage Academy is dedicated to advancing understanding, governance, and human expertise in
-          urban intelligence. The Academy supports professionals, planners, policymakers, and
-          organizations in developing the knowledge and capabilities required to integrate AI
-          responsibly into urban systems.
-        </p>
-        <p className="mt-4 text-md leading-relaxed text-muted">
-          The Academy aligns with <span className="font-semibold text-accent">Industry 5.0</span> principles,
-          ensuring technological advancement remains human-centric, ethical, and environmentally
-          conscious.
-        </p>
+        <ScrollReveal>
+          <p className="text-md leading-relaxed text-muted">
+            CitySage Academy is dedicated to advancing understanding, governance, and human expertise in
+            urban intelligence. The Academy supports professionals, planners, policymakers, and
+            organizations in developing the knowledge and capabilities required to integrate AI
+            responsibly into urban systems.
+          </p>
+          <p className="mt-4 text-md leading-relaxed text-muted">
+            The Academy aligns with <span className="font-semibold text-accent">Industry 5.0</span> principles,
+            ensuring technological advancement remains human-centric, ethical, and environmentally
+            conscious.
+          </p>
+        </ScrollReveal>
       </section>
 
       <div className="h-px bg-gradient-to-r from-transparent via-accent/15 to-transparent" />
@@ -145,7 +148,7 @@ export default function AcademyPage() {
       {/* Module Overview */}
       <section className="relative bg-background-alt px-4 py-12 sm:px-6 sm:py-20">
         <div className="pointer-events-none absolute inset-0 bg-grid-dot opacity-20" />
-        <div className="relative mx-auto max-w-5xl">
+        <ScrollReveal className="relative mx-auto max-w-5xl">
           <p className="mb-3 text-center font-mono text-[10px] uppercase tracking-[0.3em] text-accent/40">
             // Curriculum Overview
           </p>
@@ -163,28 +166,30 @@ export default function AcademyPage() {
               loading="lazy"
             />
           </div>
-        </div>
+        </ScrollReveal>
       </section>
 
       <div className="h-px bg-gradient-to-r from-transparent via-accent/15 to-transparent" />
 
       {/* Programme Structure */}
       <section aria-labelledby="programme-heading" className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-20">
-        <p className="mb-3 text-center font-mono text-[10px] uppercase tracking-[0.3em] text-accent/40">
-          // Programme Structure
-        </p>
-        <h2 id="programme-heading" className="text-center text-2xl font-bold text-foreground-bright sm:text-3xl md:text-4xl">
-          Three Progressive Levels
-        </h2>
-        <p className="mx-auto mt-3 max-w-4xl text-center text-base text-muted sm:text-lg">
-          CitySage Academy offers structured learning pathways organized into three progressive levels.
-        </p>
+        <ScrollReveal>
+          <p className="mb-3 text-center font-mono text-[10px] uppercase tracking-[0.3em] text-accent/40">
+            // Programme Structure
+          </p>
+          <h2 id="programme-heading" className="text-center text-2xl font-bold text-foreground-bright sm:text-3xl md:text-4xl">
+            Three Progressive Levels
+          </h2>
+          <p className="mx-auto mt-3 max-w-4xl text-center text-base text-muted sm:text-lg">
+            CitySage Academy offers structured learning pathways organized into three progressive levels.
+          </p>
+        </ScrollReveal>
 
         <div className="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-          {levels.map((lvl) => (
+          {levels.map((lvl, i) => (
+            <ScrollReveal key={lvl.level} delay={i * 0.12}>
             <div
-              key={lvl.level}
-              className="group relative flex flex-col overflow-hidden rounded border border-border bg-card transition-all duration-300 hover:border-accent/30 hover:shadow-[0_0_20px_rgba(74,222,128,0.06)]"
+              className="group relative flex h-full flex-col overflow-hidden rounded border border-border bg-card transition-all duration-300 hover:border-accent/30 hover:shadow-[0_0_20px_rgba(74,222,128,0.06)]"
             >
               <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-transparent to-transparent transition-all duration-300 group-hover:via-accent/40" />
               <div className="p-6">
@@ -216,6 +221,7 @@ export default function AcademyPage() {
                 </div>
               </div>
             </div>
+            </ScrollReveal>
           ))}
         </div>
       </section>
@@ -226,31 +232,32 @@ export default function AcademyPage() {
       <section aria-labelledby="philosophy-heading" className="relative bg-background-alt px-4 py-12 sm:px-6 sm:py-20">
         <div className="pointer-events-none absolute inset-0 bg-grid-dot opacity-20" />
         <div className="relative mx-auto max-w-5xl">
-          <p className="mb-3 text-center font-mono text-[10px] uppercase tracking-[0.3em] text-accent/40">
-            // Foundation
-          </p>
-          <h2 id="philosophy-heading" className="text-center text-2xl font-bold text-foreground-bright sm:text-3xl md:text-4xl">
-            Core Philosophy
-          </h2>
-          <p className="mx-auto mt-3 max-w-4xl text-center text-base text-muted sm:text-lg">
-            CitySage Academy is built around three foundational pillars.
-          </p>
+          <ScrollReveal>
+            <p className="mb-3 text-center font-mono text-[10px] uppercase tracking-[0.3em] text-accent/40">
+              // Foundation
+            </p>
+            <h2 id="philosophy-heading" className="text-center text-2xl font-bold text-foreground-bright sm:text-3xl md:text-4xl">
+              Core Philosophy
+            </h2>
+            <p className="mx-auto mt-3 max-w-4xl text-center text-base text-muted sm:text-lg">
+              CitySage Academy is built around three foundational pillars.
+            </p>
+          </ScrollReveal>
 
           <div className="mt-12 grid gap-6 md:grid-cols-3">
-            {pillars.map((pillar) => (
-              <div
-                key={pillar.number}
-                className="group relative overflow-hidden rounded border border-border bg-card p-6 transition-all duration-300 hover:border-accent/30 hover:shadow-[0_0_20px_rgba(74,222,128,0.06)]"
-              >
-                <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-transparent to-transparent transition-all duration-300 group-hover:via-accent/40" />
-                <span className="inline-block rounded border border-accent/20 bg-accent/5 px-3 py-1 font-mono text-sm font-bold text-accent">
-                  {pillar.number}
-                </span>
-                <h3 className="mt-3 text-lg font-semibold text-foreground-bright">
-                  {pillar.title}
-                </h3>
-                <p className="mt-2 text-md leading-relaxed text-muted">{pillar.description}</p>
-              </div>
+            {pillars.map((pillar, i) => (
+              <ScrollReveal key={pillar.number} delay={i * 0.12}>
+                <div className="group relative h-full overflow-hidden rounded border border-border bg-card p-6 transition-all duration-300 hover:border-accent/30 hover:shadow-[0_0_20px_rgba(74,222,128,0.06)]">
+                  <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-transparent to-transparent transition-all duration-300 group-hover:via-accent/40" />
+                  <span className="inline-block rounded border border-accent/20 bg-accent/5 px-3 py-1 font-mono text-sm font-bold text-accent">
+                    {pillar.number}
+                  </span>
+                  <h3 className="mt-3 text-lg font-semibold text-foreground-bright">
+                    {pillar.title}
+                  </h3>
+                  <p className="mt-2 text-md leading-relaxed text-muted">{pillar.description}</p>
+                </div>
+              </ScrollReveal>
             ))}
           </div>
         </div>
@@ -262,7 +269,7 @@ export default function AcademyPage() {
       <section className="mx-auto max-w-5xl px-4 py-12 sm:px-6 sm:py-20">
         <div className="grid gap-12 md:grid-cols-2">
           {/* Objectives */}
-          <div>
+          <ScrollReveal>
             <p className="mb-3 font-mono text-[10px] uppercase tracking-[0.3em] text-accent/40">
               // Objectives
             </p>
@@ -290,10 +297,10 @@ export default function AcademyPage() {
                 </li>
               ))}
             </ul>
-          </div>
+          </ScrollReveal>
 
           {/* Target Audience */}
-          <div>
+          <ScrollReveal delay={0.15}>
             <p className="mb-3 font-mono text-[10px] uppercase tracking-[0.3em] text-accent/40">
               // Who It&apos;s For
             </p>
@@ -309,7 +316,7 @@ export default function AcademyPage() {
                 </li>
               ))}
             </ul>
-          </div>
+          </ScrollReveal>
         </div>
       </section>
 
@@ -318,7 +325,7 @@ export default function AcademyPage() {
       {/* Alignment with Vision */}
       <section className="relative bg-background-alt px-4 py-12 sm:px-6 sm:py-20">
         <div className="pointer-events-none absolute inset-0 bg-grid-dot opacity-20" />
-        <div className="relative mx-auto max-w-3xl text-center">
+        <ScrollReveal className="relative mx-auto max-w-3xl text-center">
           <p className="mb-3 font-mono text-[10px] uppercase tracking-[0.3em] text-accent/40">
             // Our Purpose
           </p>
@@ -334,25 +341,27 @@ export default function AcademyPage() {
             Through education and capability development, the Academy empowers cities to make informed,
             responsible, and future-ready decisions.
           </p>
-        </div>
+        </ScrollReveal>
       </section>
 
       <div className="h-px bg-gradient-to-r from-transparent via-accent/15 to-transparent" />
 
       {/* Gallery */}
       <section aria-labelledby="gallery-heading" className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-20">
-        <p className="mb-3 text-center font-mono text-[10px] uppercase tracking-[0.3em] text-accent/40">
-          // Gallery
-        </p>
-        <h2 id="gallery-heading" className="text-center text-2xl font-bold text-foreground-bright sm:text-3xl md:text-4xl">
-          Inside the Academy
-        </h2>
-        <p className="mx-auto mt-3 max-w-4xl text-center text-base text-muted sm:text-lg">
-          Highlights from our training sessions, workshops, and collaborative learning experiences.
-        </p>
+        <ScrollReveal>
+          <p className="mb-3 text-center font-mono text-[10px] uppercase tracking-[0.3em] text-accent/40">
+            // Gallery
+          </p>
+          <h2 id="gallery-heading" className="text-center text-2xl font-bold text-foreground-bright sm:text-3xl md:text-4xl">
+            Inside the Academy
+          </h2>
+          <p className="mx-auto mt-3 max-w-4xl text-center text-base text-muted sm:text-lg">
+            Highlights from our training sessions, workshops, and collaborative learning experiences.
+          </p>
+        </ScrollReveal>
 
         {/* Collage grid — 2 cols on mobile, 2 on sm, 4 on lg with masonry */}
-        <div className="mt-10 grid grid-cols-2 gap-2 sm:gap-3 lg:grid-cols-4">
+        <ScrollReveal className="mt-10 grid grid-cols-2 gap-2 sm:gap-3 lg:grid-cols-4" delay={0.15}>
           {/* Row 1: 2 tall + 2 normal */}
           <div className="row-span-2">
             <div className="group h-full overflow-hidden rounded border border-border transition-all duration-300 hover:border-accent/30 hover:shadow-[0_0_20px_rgba(74,222,128,0.06)]">
@@ -438,7 +447,7 @@ export default function AcademyPage() {
               />
             </div>
           </div>
-        </div>
+        </ScrollReveal>
       </section>
 
       <div className="h-px bg-gradient-to-r from-transparent via-accent/15 to-transparent" />
@@ -446,7 +455,7 @@ export default function AcademyPage() {
       {/* CTA */}
       <section className="relative bg-background-alt px-4 py-12 sm:px-6 sm:py-20">
         <div className="pointer-events-none absolute inset-0 bg-grid-dot opacity-20" />
-        <div className="relative mx-auto max-w-3xl text-center">
+        <ScrollReveal className="relative mx-auto max-w-3xl text-center">
           <p className="mb-3 font-mono text-[10px] uppercase tracking-[0.3em] text-accent/40">
             // Get Started
           </p>
@@ -470,7 +479,7 @@ export default function AcademyPage() {
               Request Demo
             </Link>
           </div>
-        </div>
+        </ScrollReveal>
       </section>
     </>
   );
