@@ -3,6 +3,7 @@ import Link from "next/link";
 import Hero from "@/components/Hero";
 import Card from "@/components/Card";
 import EmbedFrame from "@/components/EmbedFrame";
+import HeroVisual from "@/components/HeroVisual";
 import { services, aiWorkers, projects } from "@/lib/data";
 
 export const metadata: Metadata = {
@@ -58,12 +59,15 @@ export default function Home() {
 
       {/* Hero */}
       <Hero
+        layout="split"
         label="// Urban Intelligence Platform"
         title="AI-Powered Urban Intelligence"
         subtitle="CitySage deploys specialised AI workers that help cities plan smarter, move faster, and grow sustainably. From traffic optimisation to environmental monitoring, we turn urban data into actionable insight."
         primaryCta={{ label: "Request Demo", href: "/request-demo" }}
         secondaryCta={{ label: "Learn More", href: "/about" }}
-      />
+      >
+        <HeroVisual />
+      </Hero>
 
       {/* Video Showcase */}
       <section className="relative bg-background-alt px-4 py-24 sm:px-6">

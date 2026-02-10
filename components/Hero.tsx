@@ -7,11 +7,15 @@ interface HeroProps {
   title: string;
   subtitle: string;
   label?: string;
+  layout?: "center" | "split";
   primaryCta?: { label: string; href: string };
   secondaryCta?: { label: string; href: string };
+  children?: React.ReactNode;
 }
 
-export default function Hero({ title, subtitle, label, primaryCta, secondaryCta }: HeroProps) {
+export default function Hero({ title, subtitle, label, layout = "center", primaryCta, secondaryCta, children }: HeroProps) {
+  const isSplit = layout === "split";
+
   return (
     <section className="relative overflow-hidden bg-surface px-4 py-28 sm:px-6 lg:py-36">
       {/* ── Animated background layers ── */}
@@ -55,63 +59,147 @@ export default function Hero({ title, subtitle, label, primaryCta, secondaryCta 
       {/* Bottom accent line */}
       <div className="pointer-events-none absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-accent/20 to-transparent" />
 
-      <div className="relative mx-auto max-w-4xl text-center">
-        {/* Data label */}
-        {label && (
-          <motion.p
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.4 }}
-            className="font-mono text-[11px] uppercase tracking-[0.3em] text-accent/60"
-          >
-            {label}
-          </motion.p>
-        )}
+      {isSplit ? (
+        /* ── Split layout: text left, children right ── */
+        <div className="relative mx-auto grid max-w-7xl items-center gap-4 lg:grid-cols-2 lg:gap-8">
+          {children && (
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.7, delay: 0.3 }}
+              className="flex items-center justify-center"
+            >
+              {children}
+            </motion.div>
+          )}
+          <div>
+            {label && (
+              <motion.p
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.4 }}
+                className="font-mono text-[11px] uppercase tracking-[0.3em] text-accent/60"
+              >
+                {label}
+              </motion.p>
+            )}
 
-        <motion.h1
-          initial={{ opacity: 0, y: 16 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.1 }}
-          className="text-glow mt-5 text-4xl font-extrabold tracking-tight text-foreground-bright sm:text-5xl lg:text-6xl"
-        >
-          {title}
-        </motion.h1>
+            <motion.h1
+              initial={{ opacity: 0, y: 16 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.1 }}
+              className="text-glow mt-5 text-4xl font-extrabold tracking-tight text-foreground-bright sm:text-5xl lg:text-6xl"
+            >
+              {title}
+            </motion.h1>
 
-        <motion.p
-          initial={{ opacity: 0, y: 16 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.2 }}
-          className="mx-auto mt-6 max-w-4xl text-lg leading-relaxed text-muted"
-        >
-          {subtitle}
-        </motion.p>
+            <motion.p
+              initial={{ opacity: 0, y: 16 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+              className="mt-6 max-w-xl text-lg leading-relaxed text-muted"
+            >
+              {subtitle}
+            </motion.p>
 
-        {(primaryCta || secondaryCta) && (
-          <motion.div
+            {(primaryCta || secondaryCta) && (
+              <motion.div
+                initial={{ opacity: 0, y: 16 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.35 }}
+                className="mt-10 flex flex-col gap-4 sm:flex-row"
+              >
+                {primaryCta && (
+                  <Link
+                    href={primaryCta.href}
+                    className="rounded border border-accent/50 bg-accent/10 px-8 py-3 text-center font-mono text-sm font-semibold text-accent transition-all hover:bg-accent/20 hover:shadow-[0_0_25px_rgba(74,222,128,0.2)]"
+                  >
+                    {primaryCta.label}
+                  </Link>
+                )}
+                {secondaryCta && (
+                  <Link
+                    href={secondaryCta.href}
+                    className="rounded border border-border px-8 py-3 text-center font-mono text-sm font-semibold text-foreground transition-all hover:border-accent/30 hover:text-accent"
+                  >
+                    {secondaryCta.label}
+                  </Link>
+                )}
+              </motion.div>
+            )}
+          </div>
+
+          
+        </div>
+      ) : (
+        /* ── Center layout (default) ── */
+        <div className="relative mx-auto max-w-4xl text-center">
+          {label && (
+            <motion.p
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.4 }}
+              className="font-mono text-[11px] uppercase tracking-[0.3em] text-accent/60"
+            >
+              {label}
+            </motion.p>
+          )}
+
+          <motion.h1
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.35 }}
-            className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row"
+            transition={{ duration: 0.5, delay: 0.1 }}
+            className="text-glow mt-5 text-4xl font-extrabold tracking-tight text-foreground-bright sm:text-5xl lg:text-6xl"
           >
-            {primaryCta && (
-              <Link
-                href={primaryCta.href}
-                className="rounded border border-accent/50 bg-accent/10 px-8 py-3 font-mono text-sm font-semibold text-accent transition-all hover:bg-accent/20 hover:shadow-[0_0_25px_rgba(74,222,128,0.2)]"
-              >
-                {primaryCta.label}
-              </Link>
-            )}
-            {secondaryCta && (
-              <Link
-                href={secondaryCta.href}
-                className="rounded border border-border px-8 py-3 font-mono text-sm font-semibold text-foreground transition-all hover:border-accent/30 hover:text-accent"
-              >
-                {secondaryCta.label}
-              </Link>
-            )}
-          </motion.div>
-        )}
-      </div>
+            {title}
+          </motion.h1>
+
+          <motion.p
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            className="mx-auto mt-6 max-w-4xl text-lg leading-relaxed text-muted"
+          >
+            {subtitle}
+          </motion.p>
+
+          {(primaryCta || secondaryCta) && (
+            <motion.div
+              initial={{ opacity: 0, y: 16 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.35 }}
+              className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row"
+            >
+              {primaryCta && (
+                <Link
+                  href={primaryCta.href}
+                  className="rounded border border-accent/50 bg-accent/10 px-8 py-3 font-mono text-sm font-semibold text-accent transition-all hover:bg-accent/20 hover:shadow-[0_0_25px_rgba(74,222,128,0.2)]"
+                >
+                  {primaryCta.label}
+                </Link>
+              )}
+              {secondaryCta && (
+                <Link
+                  href={secondaryCta.href}
+                  className="rounded border border-border px-8 py-3 font-mono text-sm font-semibold text-foreground transition-all hover:border-accent/30 hover:text-accent"
+                >
+                  {secondaryCta.label}
+                </Link>
+              )}
+            </motion.div>
+          )}
+
+          {children && (
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.5 }}
+            >
+              {children}
+            </motion.div>
+          )}
+        </div>
+      )}
     </section>
   );
 }

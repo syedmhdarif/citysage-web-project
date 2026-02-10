@@ -48,7 +48,8 @@ export default function Header() {
                   </svg>
                 </button>
                 {ecoOpen && (
-                  <div className="absolute left-0 top-full mt-1 w-52 rounded border border-border bg-card py-2 shadow-lg shadow-black/40">
+                  <div className="absolute left-0 top-full w-52 pt-1">
+                    <div className="rounded border border-border bg-card py-2 shadow-lg shadow-black/40">
                     {item.children.map((child) => (
                       <Link
                         key={child.href}
@@ -60,6 +61,7 @@ export default function Header() {
                         {child.label}
                       </Link>
                     ))}
+                    </div>
                   </div>
                 )}
               </div>
