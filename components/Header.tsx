@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import Image from "next/image";
+
 import { usePathname } from "next/navigation";
 import { navItems } from "@/lib/data";
 
@@ -22,7 +22,7 @@ export default function Header() {
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6">
         {/* Logo */}
         <Link href="/" className="flex items-center">
-          <Image src="/mainIcon.png" alt="CitySage — AI-Powered Urban Intelligence" width={140} height={30} priority />
+          <img src={`${process.env.__NEXT_ROUTER_BASEPATH || ""}/mainIcon.png`} alt="CitySage — AI-Powered Urban Intelligence" width={140} height={30} />
         </Link>
 
         {/* Desktop nav */}
