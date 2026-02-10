@@ -81,7 +81,7 @@ body {
 
 /* ── Data matrix backgrounds ──────────────── */
 .bg-grid-dot {
-  background-image: radial-gradient(rgba(74, 222, 128, 0.36) 1px, transparent 1px);
+  background-image: radial-gradient(rgba(74, 222, 128, 0.28) 1px, transparent 1px);
   background-size: 24px 24px;
 }
 
