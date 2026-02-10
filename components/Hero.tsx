@@ -37,7 +37,7 @@ export default function Hero({ title, subtitle, label, layout = "center", primar
       onMouseMove={handleMouseMove}
       onMouseEnter={() => setCursorVisible(true)}
       onMouseLeave={() => setCursorVisible(false)}
-      className="relative overflow-hidden bg-surface px-4 py-28 sm:px-6 lg:py-36"
+      className="relative overflow-hidden bg-surface px-4 py-16 sm:px-6 sm:py-28 lg:py-36"
     >
       {/* ── Glass glyph cursor follower ── */}
       <motion.div
@@ -124,18 +124,18 @@ export default function Hero({ title, subtitle, label, layout = "center", primar
 
       {isSplit ? (
         /* ── Split layout: text left, children right ── */
-        <div className="relative mx-auto grid max-w-7xl items-center gap-4 lg:grid-cols-2 lg:gap-8">
+        <div className="relative mx-auto grid max-w-7xl items-center gap-8 lg:grid-cols-2">
           {children && (
             <motion.div
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.7, delay: 0.3 }}
-              className="flex items-center justify-center"
+              className="flex items-center justify-center lg:order-first"
             >
               {children}
             </motion.div>
           )}
-          <div>
+          <div className="order-first lg:order-last">
             {label && (
               <motion.p
                 initial={{ opacity: 0 }}
@@ -151,7 +151,7 @@ export default function Hero({ title, subtitle, label, layout = "center", primar
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.1 }}
-              className="text-glow mt-5 text-4xl font-extrabold tracking-tight text-foreground-bright sm:text-5xl lg:text-6xl"
+              className="text-glow mt-5 text-3xl font-extrabold tracking-tight text-foreground-bright sm:text-4xl md:text-5xl lg:text-6xl"
             >
               {title}
             </motion.h1>
@@ -160,7 +160,7 @@ export default function Hero({ title, subtitle, label, layout = "center", primar
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.2 }}
-              className="mt-6 max-w-xl text-lg leading-relaxed text-muted"
+              className="mt-4 max-w-xl text-base leading-relaxed text-muted sm:mt-6 sm:text-lg"
             >
               {subtitle}
             </motion.p>
@@ -170,7 +170,7 @@ export default function Hero({ title, subtitle, label, layout = "center", primar
                 initial={{ opacity: 0, y: 16 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.35 }}
-                className="mt-10 flex flex-col gap-4 sm:flex-row"
+                className="mt-8 flex flex-col gap-3 sm:mt-10 sm:flex-row sm:gap-4"
               >
                 {primaryCta && (
                   <Link
@@ -212,7 +212,7 @@ export default function Hero({ title, subtitle, label, layout = "center", primar
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.1 }}
-            className="text-glow mt-5 text-4xl font-extrabold tracking-tight text-foreground-bright sm:text-5xl lg:text-6xl"
+            className="text-glow mt-5 text-3xl font-extrabold tracking-tight text-foreground-bright sm:text-4xl md:text-5xl lg:text-6xl"
           >
             {title}
           </motion.h1>
@@ -221,7 +221,7 @@ export default function Hero({ title, subtitle, label, layout = "center", primar
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="mx-auto mt-6 max-w-4xl text-xl leading-relaxed text-muted"
+            className="mx-auto mt-4 max-w-4xl text-base leading-relaxed text-muted sm:mt-6 sm:text-lg md:text-xl"
           >
             {subtitle}
           </motion.p>
@@ -231,7 +231,7 @@ export default function Hero({ title, subtitle, label, layout = "center", primar
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.35 }}
-              className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row"
+              className="mt-8 flex flex-col items-center justify-center gap-3 sm:mt-10 sm:flex-row sm:gap-4"
             >
               {primaryCta && (
                 <Link

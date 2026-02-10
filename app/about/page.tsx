@@ -117,7 +117,7 @@ export default function AboutPage() {
       />
 
       {/* Overview */}
-      <section className="mx-auto max-w-4xl px-4 py-20 sm:px-6">
+      <section className="mx-auto max-w-4xl px-4 py-12 sm:px-6 sm:py-20">
         <p className="text-md leading-relaxed text-muted">
           Founded by visionary leaders in urban development and AI, CitySage aims to drive sustainable
           urban development by providing innovative solutions that align with ESG principles and Net Zero
@@ -129,14 +129,14 @@ export default function AboutPage() {
       <div className="h-px bg-gradient-to-r from-transparent via-accent/15 to-transparent" />
 
       {/* Vision & Mission */}
-      <section className="relative bg-background-alt px-4 py-20 sm:px-6">
+      <section className="relative bg-background-alt px-4 py-12 sm:px-6 sm:py-20">
         <div className="pointer-events-none absolute inset-0 bg-grid-dot opacity-20" />
         <div className="relative mx-auto max-w-5xl">
           <div className="grid gap-12 md:grid-cols-2">
             {/* Vision */}
             <div>
               <p className="mb-3 font-mono text-[10px] uppercase tracking-[0.3em] text-accent/40">// Vision</p>
-              <h2 className="text-4xl font-bold text-foreground-bright">Our Vision</h2>
+              <h2 className="text-2xl font-bold text-foreground-bright sm:text-3xl md:text-4xl">Our Vision</h2>
               <p className="mt-4 text-md leading-relaxed text-muted">
                 We envision a world where cities are designed to intelligently anticipate future
                 challenges, ensuring they are resilient, sustainable, and vibrant places for generations
@@ -149,7 +149,7 @@ export default function AboutPage() {
             {/* Mission */}
             <div>
               <p className="mb-3 font-mono text-[10px] uppercase tracking-[0.3em] text-accent/40">// Mission</p>
-              <h2 className="text-4xl font-bold text-foreground-bright">Our Mission</h2>
+              <h2 className="text-2xl font-bold text-foreground-bright sm:text-3xl md:text-4xl">Our Mission</h2>
               <p className="mt-4 text-md leading-relaxed text-muted">
                 CitySage is committed to promoting accessibility and inclusivity in urban planning.
                 We deliver AI solutions and services that support ESG-aligned decision making,
@@ -164,10 +164,10 @@ export default function AboutPage() {
       <div className="h-px bg-gradient-to-r from-transparent via-accent/15 to-transparent" />
 
       {/* CITYSAGE Core Values */}
-      <section className="mx-auto max-w-7xl px-4 py-20 sm:px-6">
+      <section className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-20">
         <p className="mb-3 text-center font-mono text-[10px] uppercase tracking-[0.3em] text-accent/40">// Principles</p>
-        <h2 className="text-center text-4xl font-bold text-foreground-bright">Our Core Values</h2>
-        <p className="mx-auto mt-3 max-w-4xl text-center text-lg text-muted">
+        <h2 className="text-center text-2xl font-bold text-foreground-bright sm:text-3xl md:text-4xl">Our Core Values</h2>
+        <p className="mx-auto mt-3 max-w-4xl text-center text-base text-muted sm:text-lg">
           The acronym <span className="font-semibold text-accent">CITYSAGE</span> encapsulates the principles that drive everything we do.
         </p>
         <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
@@ -190,11 +190,11 @@ export default function AboutPage() {
       <div className="h-px bg-gradient-to-r from-transparent via-accent/15 to-transparent" />
 
       {/* Culture */}
-      <section className="relative bg-background-alt px-4 py-20 sm:px-6">
+      <section className="relative bg-background-alt px-4 py-12 sm:px-6 sm:py-20">
         <div className="pointer-events-none absolute inset-0 bg-grid-dot opacity-20" />
         <div className="relative mx-auto max-w-3xl text-center">
           <p className="mb-3 font-mono text-[10px] uppercase tracking-[0.3em] text-accent/40">// Culture</p>
-          <h2 className="text-4xl font-bold text-foreground-bright">Our Culture</h2>
+          <h2 className="text-2xl font-bold text-foreground-bright sm:text-3xl md:text-4xl">Our Culture</h2>
           <p className="mt-6 text-md leading-relaxed text-muted">
             We are explorers of possibility — driven by data, inspired by creativity, and united by
             purpose. Our culture embraces experimentation, lifelong learning, and sustainable innovation.
@@ -207,9 +207,9 @@ export default function AboutPage() {
       <div className="h-px bg-gradient-to-r from-transparent via-accent/15 to-transparent" />
 
       {/* Leadership Quotes */}
-      <section className="mx-auto max-w-4xl px-4 py-20 sm:px-6">
+      <section className="mx-auto max-w-4xl px-4 py-12 sm:px-6 sm:py-20">
         <p className="mb-3 text-center font-mono text-[10px] uppercase tracking-[0.3em] text-accent/40">// Perspectives</p>
-        <h2 className="text-center text-4xl font-bold text-foreground-bright">Leadership Perspective</h2>
+        <h2 className="text-center text-2xl font-bold text-foreground-bright sm:text-3xl md:text-4xl">Leadership Perspective</h2>
         <div className="mt-12 grid gap-8 md:grid-cols-2">
           {quotes.map((q) => (
             <blockquote
@@ -234,7 +234,7 @@ export default function AboutPage() {
       <section className="relative bg-surface px-4 py-16 sm:px-6">
         <div className="pointer-events-none absolute inset-0 bg-grid-dot opacity-30" />
         <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-accent/20 to-transparent" />
-        <div className="relative mx-auto grid max-w-5xl gap-8 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="relative mx-auto grid max-w-5xl gap-6 grid-cols-2 lg:grid-cols-4 sm:gap-8">
           {stats.map((s) => (
             <div key={s.label} className="text-center">
               <p className="text-glow font-mono text-4xl font-extrabold text-accent">{s.value}</p>
@@ -247,14 +247,14 @@ export default function AboutPage() {
       <div className="h-px bg-gradient-to-r from-transparent via-accent/15 to-transparent" />
 
       {/* Team */}
-      <section className="mx-auto max-w-7xl px-4 py-20 sm:px-6">
+      <section className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-20">
         <p className="mb-3 text-center font-mono text-[10px] uppercase tracking-[0.3em] text-accent/40">// Leadership</p>
-        <h2 className="text-center text-4xl font-bold text-foreground-bright">Meet Our Team</h2>
-        <p className="mx-auto mt-3 max-w-4xl text-center text-lg text-muted">
+        <h2 className="text-center text-2xl font-bold text-foreground-bright sm:text-3xl md:text-4xl">Meet Our Team</h2>
+        <p className="mx-auto mt-3 max-w-4xl text-center text-base text-muted sm:text-lg">
           The people building the future of urban intelligence.
         </p>
 
-        <div className="mt-12 grid gap-6 md:grid-cols-3">
+        <div className="mt-10 grid gap-6 sm:grid-cols-2 md:grid-cols-3">
           {team.map((member) => (
             <div
               key={member.name}
@@ -297,11 +297,11 @@ export default function AboutPage() {
       <div className="h-px bg-gradient-to-r from-transparent via-accent/15 to-transparent" />
 
       {/* Advisors */}
-      <section className="relative bg-background-alt px-4 py-20 sm:px-6">
+      <section className="relative bg-background-alt px-4 py-12 sm:px-6 sm:py-20">
         <div className="pointer-events-none absolute inset-0 bg-grid-dot opacity-20" />
         <div className="relative mx-auto max-w-4xl">
           <p className="mb-3 text-center font-mono text-[10px] uppercase tracking-[0.3em] text-accent/40">// Advisors</p>
-          <h2 className="text-center text-4xl font-bold text-foreground-bright">Our Advisors</h2>
+          <h2 className="text-center text-2xl font-bold text-foreground-bright sm:text-3xl md:text-4xl">Our Advisors</h2>
 
           <div className="mt-12 grid gap-6 md:grid-cols-2">
             {advisors.map((advisor) => (

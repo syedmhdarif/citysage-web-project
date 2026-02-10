@@ -71,16 +71,16 @@ export default function Home() {
       </Hero>
 
       {/* Video Showcase */}
-      <section className="relative bg-background-alt px-4 py-24 sm:px-6">
+      <section className="relative bg-background-alt px-4 py-14 sm:px-6 sm:py-24">
         <div className="pointer-events-none absolute inset-0 bg-grid-dot opacity-20" />
         <div className="relative mx-auto max-w-4xl">
           <p className="mb-3 text-center font-mono text-[10px] uppercase tracking-[0.3em] text-accent/40">
             // Watch
           </p>
-          <h2 className="text-center text-4xl font-bold text-foreground-bright">
+          <h2 className="text-center text-2xl font-bold text-foreground-bright sm:text-3xl md:text-4xl">
             The Future of Urban Intelligence
           </h2>
-          <p className="mx-auto mt-3 max-w-4xl text-center text-lg text-muted">
+          <p className="mx-auto mt-3 max-w-4xl text-center text-base text-muted sm:text-lg">
             Discover how CitySage is transforming urban intelligence with AI-driven solutions. Our latest video dives into cutting-edge innovations in smart cities, geospatial analytics, and sustainable urban planning. 🚀
           </p>
           <div className="mt-10 overflow-hidden rounded-xl border border-border shadow-[0_0_30px_rgba(74,222,128,0.06)]">
@@ -101,14 +101,14 @@ export default function Home() {
       <div className="h-px bg-gradient-to-r from-transparent via-accent/15 to-transparent" />
 
       {/* Smart City Solutions */}
-      <section aria-labelledby="solutions-heading" className="mx-auto max-w-7xl px-4 py-24 sm:px-6">
+      <section aria-labelledby="solutions-heading" className="mx-auto max-w-7xl px-4 py-14 sm:px-6 sm:py-24">
         <p className="mb-3 text-center font-mono text-[10px] uppercase tracking-[0.3em] text-accent/40">
           // Solutions
         </p>
-        <h2 id="solutions-heading" className="text-center text-4xl font-bold text-foreground-bright">
+        <h2 id="solutions-heading" className="text-center text-2xl font-bold text-foreground-bright sm:text-3xl md:text-4xl">
           Wise City Solutions
         </h2>
-        <p className="mx-auto mt-3 max-w-4xl text-center text-lg text-muted">
+        <p className="mx-auto mt-3 max-w-4xl text-center text-base text-muted sm:text-lg">
           End-to-end AI and IoT capabilities that help municipalities transition to data-driven urban management — from consulting and strategy to deployment and monitoring.
         </p>
         <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
@@ -128,19 +128,19 @@ export default function Home() {
       <div className="h-px bg-gradient-to-r from-transparent via-accent/15 to-transparent" />
 
       {/* AI Workers for Urban Planning */}
-      <section aria-labelledby="ai-workers-heading" className="relative bg-background-alt px-4 py-24 sm:px-6">
+      <section aria-labelledby="ai-workers-heading" className="relative bg-background-alt px-4 py-14 sm:px-6 sm:py-24">
         <div className="pointer-events-none absolute inset-0 bg-grid-dot opacity-30" />
         <div className="relative mx-auto max-w-7xl">
           <p className="mb-3 text-center font-mono text-[10px] uppercase tracking-[0.3em] text-accent/40">
             // AI Workers
           </p>
-          <h2 id="ai-workers-heading" className="text-center text-4xl font-bold text-foreground-bright">
+          <h2 id="ai-workers-heading" className="text-center text-2xl font-bold text-foreground-bright sm:text-3xl md:text-4xl">
             Meet Our AI Workers
           </h2>
-          <p className="mx-auto mt-3 max-w-4xl text-center text-lg text-muted">
+          <p className="mx-auto mt-3 max-w-4xl text-center text-base text-muted sm:text-lg">
             Domain-specific AI agents purpose-built for urban challenges — from geospatial analysis and zoning optimisation to data governance and housing strategy.
           </p>
-          <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="mt-10 grid gap-5 sm:mt-14 sm:grid-cols-2 lg:grid-cols-4">
             {aiWorkers.map((w) => (
               <Link key={w.slug} href={`/ai-workers/${w.slug}`} className="group">
                 <article className="relative flex h-full flex-col overflow-hidden rounded border border-border bg-card transition-all duration-300 hover:border-accent/30 hover:shadow-[0_0_20px_rgba(74,222,128,0.06)]">
@@ -171,14 +171,14 @@ export default function Home() {
       <div className="h-px bg-gradient-to-r from-transparent via-accent/15 to-transparent" />
 
       {/* Smart City Case Studies */}
-      <section aria-labelledby="projects-heading" className="mx-auto max-w-7xl px-4 py-24 sm:px-6">
+      <section aria-labelledby="projects-heading" className="mx-auto max-w-7xl px-4 py-14 sm:px-6 sm:py-24">
         <p className="mb-3 text-center font-mono text-[10px] uppercase tracking-[0.3em] text-accent/40">
           // Case Studies
         </p>
-        <h2 id="projects-heading" className="text-center text-4xl font-bold text-foreground-bright">
+        <h2 id="projects-heading" className="text-center text-2xl font-bold text-foreground-bright sm:text-3xl md:text-4xl">
           Smart City Projects &amp; Case Studies
         </h2>
-        <p className="mx-auto mt-3 max-w-4xl text-center text-lg text-muted">
+        <p className="mx-auto mt-3 max-w-4xl text-center text-base text-muted sm:text-lg">
           Real-world AI-driven urban intelligence deployments across Malaysia and Southeast Asia — delivering measurable impact in waste management, transit, air quality, and infrastructure.
         </p>
         <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
@@ -198,16 +198,16 @@ export default function Home() {
       <div className="h-px bg-gradient-to-r from-transparent via-accent/15 to-transparent" />
 
       {/* UrbanData AI Chat Interface */}
-      <section aria-labelledby="urbandata-heading" className="relative bg-background-alt px-4 py-24 sm:px-6">
+      <section aria-labelledby="urbandata-heading" className="relative bg-background-alt px-4 py-14 sm:px-6 sm:py-24">
         <div className="pointer-events-none absolute inset-0 bg-grid-dot opacity-20" />
         <div className="relative mx-auto max-w-4xl">
           <p className="mb-3 text-center font-mono text-[10px] uppercase tracking-[0.3em] text-accent/40">
             // Live Interface
           </p>
-          <h2 id="urbandata-heading" className="text-center text-4xl font-bold text-foreground-bright">
+          <h2 id="urbandata-heading" className="text-center text-2xl font-bold text-foreground-bright sm:text-3xl md:text-4xl">
             Try UrbanData AI
           </h2>
-          <p className="mx-auto mt-3 max-w-4xl text-center text-lg text-muted">
+          <p className="mx-auto mt-3 max-w-4xl text-center text-base text-muted sm:text-lg">
             Chat with our urban intelligence engine — ask about city data, planning metrics, or sustainability insights for Malaysian cities and beyond.
           </p>
           <div className="mt-10">
@@ -220,16 +220,16 @@ export default function Home() {
       <div className="h-px bg-gradient-to-r from-transparent via-accent/15 to-transparent" />
 
       {/* Instagram Feed */}
-      <section aria-labelledby="instagram-heading" className="relative bg-background-alt px-4 py-24 sm:px-6">
+      <section aria-labelledby="instagram-heading" className="relative bg-background-alt px-4 py-14 sm:px-6 sm:py-24">
         <div className="pointer-events-none absolute inset-0 bg-grid-dot opacity-20" />
         <div className="relative mx-auto max-w-5xl">
           <p className="mb-3 text-center font-mono text-[10px] uppercase tracking-[0.3em] text-accent/40">
             // Follow Us
           </p>
-          <h2 id="instagram-heading" className="text-center text-4xl font-bold text-foreground-bright">
+          <h2 id="instagram-heading" className="text-center text-2xl font-bold text-foreground-bright sm:text-3xl md:text-4xl">
             Latest from Instagram
           </h2>
-          <p className="mx-auto mt-3 max-w-4xl text-center text-lg text-muted">
+          <p className="mx-auto mt-3 max-w-4xl text-center text-base text-muted sm:text-lg">
             Stay updated with our latest insights on AI-powered urban planning, smart city innovations, and community-driven development.
           </p>
           <InstagramFeed />
@@ -250,16 +250,16 @@ export default function Home() {
       <div className="h-px bg-gradient-to-r from-transparent via-accent/15 to-transparent" />
 
       {/* Trusted By Municipalities & Institutions */}
-      <section aria-labelledby="partners-heading" className="mx-auto max-w-7xl px-4 py-20 sm:px-6">
+      <section aria-labelledby="partners-heading" className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-20">
         <h2 id="partners-heading" className="sr-only">Trusted Partners and Institutions</h2>
         <p className="text-center font-mono text-[10px] uppercase tracking-[0.3em] text-muted-foreground">
           // Trusted by Municipalities &amp; Institutions
         </p>
-        <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
+        <div className="mt-6 flex flex-wrap items-center justify-center gap-2.5 sm:mt-8 sm:gap-4">
           {["DBKL", "Penang State Gov", "MDEC", "Iskandar Regional Dev Authority", "UTM", "UMPSA"].map((name) => (
             <span
               key={name}
-              className="rounded border border-border/60 px-4 py-2 font-mono text-[11px] uppercase tracking-wider text-muted-foreground transition-colors hover:border-accent/20 hover:text-muted"
+              className="rounded border border-border/60 px-3 py-1.5 font-mono text-[10px] uppercase tracking-wider text-muted-foreground transition-colors hover:border-accent/20 hover:text-muted sm:px-4 sm:py-2 sm:text-[11px]"
             >
               {name}
             </span>

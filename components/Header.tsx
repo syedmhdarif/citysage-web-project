@@ -1,8 +1,7 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
-
 import { usePathname } from "next/navigation";
 import { navItems } from "@/lib/data";
 
@@ -10,6 +9,17 @@ export default function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [ecoOpen, setEcoOpen] = useState(false);
   const pathname = usePathname();
+
+  // Lock body scroll when mobile menu is open
+  useEffect(() => {
+    document.body.classList.toggle("menu-open", mobileOpen);
+    return () => document.body.classList.remove("menu-open");
+  }, [mobileOpen]);
+
+  // Close mobile menu on route change
+  useEffect(() => {
+    setMobileOpen(false);
+  }, [pathname]);
 
   function isActive(href: string | undefined) {
     if (!href) return false;
@@ -19,10 +29,16 @@ export default function Header() {
 
   return (
     <header className="sticky top-0 z-50 bg-background/60 backdrop-blur-xl">
-      <div className="mx-auto flex h-18 max-w-7xl items-center justify-between px-4 sm:px-6">
+      <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:h-18 sm:px-6">
         {/* Logo */}
         <Link href="/" className="flex items-center">
-          <img src={`${process.env.__NEXT_ROUTER_BASEPATH || ""}/mainIcon.png`} alt="CitySage — AI-Powered Urban Intelligence" width={130} height={0} />
+          <img
+            src={`${process.env.__NEXT_ROUTER_BASEPATH || ""}/mainIcon.png`}
+            alt="CitySage — AI-Powered Urban Intelligence"
+            width={110}
+            height={0}
+            className="sm:w-[130px]"
+          />
         </Link>
 
         {/* Desktop nav */}
@@ -50,17 +66,17 @@ export default function Header() {
                 {ecoOpen && (
                   <div className="absolute left-0 top-full w-52 pt-1">
                     <div className="rounded border border-border bg-card py-2 shadow-lg shadow-black/40">
-                    {item.children.map((child) => (
-                      <Link
-                        key={child.href}
-                        href={child.href}
-                        className={`block px-4 py-2 font-mono text-xs uppercase tracking-wider transition-colors hover:bg-accent/5 hover:text-accent ${
-                          isActive(child.href) ? "text-accent bg-accent/5" : "text-muted"
-                        }`}
-                      >
-                        {child.label}
-                      </Link>
-                    ))}
+                      {item.children.map((child) => (
+                        <Link
+                          key={child.href}
+                          href={child.href}
+                          className={`block px-4 py-2 font-mono text-xs uppercase tracking-wider transition-colors hover:bg-accent/5 hover:text-accent ${
+                            isActive(child.href) ? "text-accent bg-accent/5" : "text-muted"
+                          }`}
+                        >
+                          {child.label}
+                        </Link>
+                      ))}
                     </div>
                   </div>
                 )}
@@ -102,9 +118,10 @@ export default function Header() {
 
         {/* Mobile toggle */}
         <button
-          className="lg:hidden"
+          className="flex h-10 w-10 items-center justify-center rounded lg:hidden"
           onClick={() => setMobileOpen(!mobileOpen)}
           aria-label="Toggle menu"
+          aria-expanded={mobileOpen}
         >
           <svg className="h-6 w-6 text-muted" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             {mobileOpen ? (
@@ -121,29 +138,37 @@ export default function Header() {
 
       {/* Mobile menu */}
       {mobileOpen && (
-        <nav aria-label="Mobile navigation" className="border-t border-border bg-card px-4 py-4 lg:hidden">
+        <nav aria-label="Mobile navigation" className="border-t border-border bg-background px-6 py-5 lg:hidden">
           {navItems.map((item) =>
             item.children ? (
               <div key={item.label}>
                 <button
                   onClick={() => setEcoOpen(!ecoOpen)}
-                  className={`flex w-full items-center justify-between py-2.5 font-mono text-xs uppercase tracking-wider ${
+                  className={`flex w-full items-center justify-between py-3 font-mono text-sm uppercase tracking-wider ${
                     item.children.some((c) => isActive(c.href)) ? "text-accent" : "text-muted"
                   }`}
                 >
                   {item.label}
-                  <svg className={`h-3 w-3 transition-transform ${ecoOpen ? "rotate-180" : ""}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg
+                    className={`h-4 w-4 transition-transform duration-200 ${ecoOpen ? "rotate-180" : ""}`}
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                   </svg>
                 </button>
-                {ecoOpen && (
-                  <div className="ml-4 border-l border-border/50 pl-4">
+                <div
+                  className={`overflow-hidden transition-all duration-200 ${
+                    ecoOpen ? "max-h-60 opacity-100" : "max-h-0 opacity-0"
+                  }`}
+                >
+                  <div className="ml-4 border-l border-border/50 pl-4 pb-2">
                     {item.children.map((child) => (
                       <Link
                         key={child.href}
                         href={child.href}
-                        onClick={() => setMobileOpen(false)}
-                        className={`block py-2 font-mono text-xs uppercase tracking-wider transition-colors hover:text-accent ${
+                        className={`block py-2.5 font-mono text-sm uppercase tracking-wider transition-colors hover:text-accent ${
                           isActive(child.href) ? "text-accent" : "text-muted-foreground"
                         }`}
                       >
@@ -151,14 +176,13 @@ export default function Header() {
                       </Link>
                     ))}
                   </div>
-                )}
+                </div>
               </div>
             ) : (
               <Link
                 key={item.href}
                 href={item.href!}
-                onClick={() => setMobileOpen(false)}
-                className={`block py-2.5 font-mono text-xs uppercase tracking-wider transition-colors hover:text-accent ${
+                className={`block py-3 font-mono text-sm uppercase tracking-wider transition-colors hover:text-accent ${
                   isActive(item.href) ? "text-accent" : "text-muted"
                 }`}
               >
@@ -166,14 +190,19 @@ export default function Header() {
               </Link>
             )
           )}
-          <div className="mt-4 flex flex-col gap-3 border-t border-border pt-4">
-            <Link href="/ai-workers" onClick={() => setMobileOpen(false)} className={`py-2 font-mono text-xs uppercase tracking-wider ${isActive("/ai-workers") ? "text-accent" : "text-accent/70"}`}>
+
+          <div className="mt-4 flex flex-col gap-3 border-t border-border pt-5">
+            <Link
+              href="/ai-workers"
+              className={`py-2.5 font-mono text-sm uppercase tracking-wider ${
+                isActive("/ai-workers") ? "text-accent" : "text-accent/70"
+              }`}
+            >
               AI Workers
             </Link>
             <Link
               href="/request-demo"
-              onClick={() => setMobileOpen(false)}
-              className="rounded border border-accent/40 bg-accent/10 px-5 py-2.5 text-center font-mono text-xs font-semibold uppercase tracking-wider text-accent"
+              className="rounded border border-accent/40 bg-accent/10 px-5 py-3 text-center font-mono text-sm font-semibold uppercase tracking-wider text-accent"
             >
               Request Demo
             </Link>

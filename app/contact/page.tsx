@@ -21,7 +21,7 @@ export default function ContactPage() {
       <Hero title="Contact Us" subtitle="Have a question or want to explore a partnership? We'd love to hear from you." />
 
       <section className="mx-auto max-w-5xl px-4 py-20 sm:px-6">
-        <div className="grid gap-12 lg:grid-cols-2">
+        <div className="grid gap-12 md:grid-cols-2">
           <div>
             <h2 className="text-2xl font-bold text-foreground">Get in Touch</h2>
             <dl className="mt-6 space-y-4 text-md text-muted">

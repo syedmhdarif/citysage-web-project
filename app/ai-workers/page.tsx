@@ -26,7 +26,7 @@ export default function AIWorkersPage() {
       />
 
       <section className="mx-auto max-w-7xl px-4 py-20 sm:px-6">
-        <div className="grid gap-8 sm:grid-cols-3">
+        <div className="grid gap-6 sm:grid-cols-2 sm:gap-8 lg:grid-cols-3">
           {aiWorkers.map((w) => (
             <Link key={w.slug} href={`/ai-workers/${w.slug}`} className="group">
               <div className="relative flex h-full flex-col overflow-hidden rounded border border-border bg-card transition-all duration-300 hover:border-accent/30 hover:shadow-[0_0_20px_rgba(74,222,128,0.06)]">

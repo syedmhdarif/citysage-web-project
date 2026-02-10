@@ -53,6 +53,8 @@
 html {
   font-size: 16px;
   scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: transparent;
 }
 
 body {
@@ -79,7 +81,7 @@ body {
 
 /* ── Data matrix backgrounds ──────────────── */
 .bg-grid-dot {
-  background-image: radial-gradient(rgba(74, 222, 128, 0.20) 1px, transparent 1px);
+  background-image: radial-gradient(rgba(74, 222, 128, 0.36) 1px, transparent 1px);
   background-size: 24px 24px;
 }
 
@@ -148,6 +150,15 @@ body {
 
 .animate-pulse-ring {
   animation: pulse-ring 6s ease-in-out infinite;
+}
+
+/* ── Mobile ───────────────────────────────── */
+body.menu-open {
+  overflow: hidden;
+}
+
+@supports (padding: env(safe-area-inset-bottom)) {
+  footer { padding-bottom: env(safe-area-inset-bottom); }
 }
 
 /* ── Scrollbar ────────────────────────────── */

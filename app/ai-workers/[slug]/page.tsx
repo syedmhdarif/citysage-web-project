@@ -41,9 +41,9 @@ export default async function AIWorkerDetail({ params }: Props) {
         <div className="pointer-events-none absolute inset-0 bg-scan-lines" />
         <div className="pointer-events-none absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-accent/20 to-transparent" />
         <div className="relative mx-auto max-w-4xl">
-          <div className="flex flex-col gap-8 sm:flex-row sm:items-center">
+          <div className="flex flex-col gap-6 sm:gap-8 md:flex-row md:items-center">
             {/* Agent GIF */}
-            <div className="shrink-0 overflow-hidden rounded border border-border sm:w-40">
+            <div className="w-32 shrink-0 overflow-hidden rounded border border-border md:w-40">
               <img
                 src={worker.image}
                 alt={`${worker.name} — ${worker.role} AI agent by CitySage`}
@@ -55,8 +55,8 @@ export default async function AIWorkerDetail({ params }: Props) {
               <span className="inline-block rounded border border-accent/20 bg-accent/5 px-3 py-1 font-mono text-[10px] uppercase tracking-wider text-accent">
                 {worker.role}
               </span>
-              <h1 className="text-glow mt-4 text-4xl font-extrabold tracking-tight text-foreground-bright sm:text-5xl">{worker.name}</h1>
-              <p className="mt-4 max-w-2xl text-lg text-muted">{worker.summary}</p>
+              <h1 className="text-glow mt-4 text-3xl font-extrabold tracking-tight text-foreground-bright sm:text-4xl md:text-5xl">{worker.name}</h1>
+              <p className="mt-3 max-w-2xl text-base text-muted sm:mt-4 sm:text-lg">{worker.summary}</p>
             </div>
           </div>
         </div>

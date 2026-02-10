@@ -126,7 +126,7 @@ export default function AcademyPage() {
       />
 
       {/* Introduction */}
-      <section className="mx-auto max-w-4xl px-4 py-20 sm:px-6">
+      <section className="mx-auto max-w-4xl px-4 py-12 sm:px-6 sm:py-20">
         <p className="text-md leading-relaxed text-muted">
           CitySage Academy is dedicated to advancing understanding, governance, and human expertise in
           urban intelligence. The Academy supports professionals, planners, policymakers, and
@@ -143,16 +143,16 @@ export default function AcademyPage() {
       <div className="h-px bg-gradient-to-r from-transparent via-accent/15 to-transparent" />
 
       {/* Module Overview */}
-      <section className="relative bg-background-alt px-4 py-20 sm:px-6">
+      <section className="relative bg-background-alt px-4 py-12 sm:px-6 sm:py-20">
         <div className="pointer-events-none absolute inset-0 bg-grid-dot opacity-20" />
         <div className="relative mx-auto max-w-5xl">
           <p className="mb-3 text-center font-mono text-[10px] uppercase tracking-[0.3em] text-accent/40">
             // Curriculum Overview
           </p>
-          <h2 className="text-center text-4xl font-bold text-foreground-bright">
+          <h2 className="text-center text-2xl font-bold text-foreground-bright sm:text-3xl md:text-4xl">
             Module Overview
           </h2>
-          <p className="mx-auto mt-3 max-w-4xl text-center text-lg text-muted">
+          <p className="mx-auto mt-3 max-w-4xl text-center text-base text-muted sm:text-lg">
             A structured curriculum designed to build progressive expertise across all dimensions of urban intelligence.
           </p>
           <div className="mt-10 overflow-hidden rounded-xl border border-border shadow-[0_0_30px_rgba(74,222,128,0.06)]">
@@ -169,18 +169,18 @@ export default function AcademyPage() {
       <div className="h-px bg-gradient-to-r from-transparent via-accent/15 to-transparent" />
 
       {/* Programme Structure */}
-      <section aria-labelledby="programme-heading" className="mx-auto max-w-7xl px-4 py-20 sm:px-6">
+      <section aria-labelledby="programme-heading" className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-20">
         <p className="mb-3 text-center font-mono text-[10px] uppercase tracking-[0.3em] text-accent/40">
           // Programme Structure
         </p>
-        <h2 id="programme-heading" className="text-center text-4xl font-bold text-foreground-bright">
+        <h2 id="programme-heading" className="text-center text-2xl font-bold text-foreground-bright sm:text-3xl md:text-4xl">
           Three Progressive Levels
         </h2>
-        <p className="mx-auto mt-3 max-w-4xl text-center text-lg text-muted">
+        <p className="mx-auto mt-3 max-w-4xl text-center text-base text-muted sm:text-lg">
           CitySage Academy offers structured learning pathways organized into three progressive levels.
         </p>
 
-        <div className="mt-14 grid gap-6 lg:grid-cols-3">
+        <div className="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {levels.map((lvl) => (
             <div
               key={lvl.level}
@@ -223,16 +223,16 @@ export default function AcademyPage() {
       <div className="h-px bg-gradient-to-r from-transparent via-accent/15 to-transparent" />
 
       {/* Core Philosophy */}
-      <section aria-labelledby="philosophy-heading" className="relative bg-background-alt px-4 py-20 sm:px-6">
+      <section aria-labelledby="philosophy-heading" className="relative bg-background-alt px-4 py-12 sm:px-6 sm:py-20">
         <div className="pointer-events-none absolute inset-0 bg-grid-dot opacity-20" />
         <div className="relative mx-auto max-w-5xl">
           <p className="mb-3 text-center font-mono text-[10px] uppercase tracking-[0.3em] text-accent/40">
             // Foundation
           </p>
-          <h2 id="philosophy-heading" className="text-center text-4xl font-bold text-foreground-bright">
+          <h2 id="philosophy-heading" className="text-center text-2xl font-bold text-foreground-bright sm:text-3xl md:text-4xl">
             Core Philosophy
           </h2>
-          <p className="mx-auto mt-3 max-w-4xl text-center text-lg text-muted">
+          <p className="mx-auto mt-3 max-w-4xl text-center text-base text-muted sm:text-lg">
             CitySage Academy is built around three foundational pillars.
           </p>
 
@@ -259,14 +259,14 @@ export default function AcademyPage() {
       <div className="h-px bg-gradient-to-r from-transparent via-accent/15 to-transparent" />
 
       {/* Objectives & Target Audience */}
-      <section className="mx-auto max-w-5xl px-4 py-20 sm:px-6">
+      <section className="mx-auto max-w-5xl px-4 py-12 sm:px-6 sm:py-20">
         <div className="grid gap-12 md:grid-cols-2">
           {/* Objectives */}
           <div>
             <p className="mb-3 font-mono text-[10px] uppercase tracking-[0.3em] text-accent/40">
               // Objectives
             </p>
-            <h2 className="text-4xl font-bold text-foreground-bright">Our Objectives</h2>
+            <h2 className="text-2xl font-bold text-foreground-bright sm:text-3xl md:text-4xl">Our Objectives</h2>
             <p className="mt-4 text-md leading-relaxed text-muted">
               CitySage Academy aims to:
             </p>
@@ -297,7 +297,7 @@ export default function AcademyPage() {
             <p className="mb-3 font-mono text-[10px] uppercase tracking-[0.3em] text-accent/40">
               // Who It&apos;s For
             </p>
-            <h2 className="text-4xl font-bold text-foreground-bright">Target Audience</h2>
+            <h2 className="text-2xl font-bold text-foreground-bright sm:text-3xl md:text-4xl">Target Audience</h2>
             <p className="mt-4 text-md leading-relaxed text-muted">
               CitySage Academy is designed for:
             </p>
@@ -316,13 +316,13 @@ export default function AcademyPage() {
       <div className="h-px bg-gradient-to-r from-transparent via-accent/15 to-transparent" />
 
       {/* Alignment with Vision */}
-      <section className="relative bg-background-alt px-4 py-20 sm:px-6">
+      <section className="relative bg-background-alt px-4 py-12 sm:px-6 sm:py-20">
         <div className="pointer-events-none absolute inset-0 bg-grid-dot opacity-20" />
         <div className="relative mx-auto max-w-3xl text-center">
           <p className="mb-3 font-mono text-[10px] uppercase tracking-[0.3em] text-accent/40">
             // Our Purpose
           </p>
-          <h2 className="text-4xl font-bold text-foreground-bright">
+          <h2 className="text-2xl font-bold text-foreground-bright sm:text-3xl md:text-4xl">
             Aligned with the CitySage Vision
           </h2>
           <p className="mt-6 text-md leading-relaxed text-muted">
@@ -340,21 +340,21 @@ export default function AcademyPage() {
       <div className="h-px bg-gradient-to-r from-transparent via-accent/15 to-transparent" />
 
       {/* Gallery */}
-      <section aria-labelledby="gallery-heading" className="mx-auto max-w-7xl px-4 py-20 sm:px-6">
+      <section aria-labelledby="gallery-heading" className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-20">
         <p className="mb-3 text-center font-mono text-[10px] uppercase tracking-[0.3em] text-accent/40">
           // Gallery
         </p>
-        <h2 id="gallery-heading" className="text-center text-4xl font-bold text-foreground-bright">
+        <h2 id="gallery-heading" className="text-center text-2xl font-bold text-foreground-bright sm:text-3xl md:text-4xl">
           Inside the Academy
         </h2>
-        <p className="mx-auto mt-3 max-w-4xl text-center text-lg text-muted">
+        <p className="mx-auto mt-3 max-w-4xl text-center text-base text-muted sm:text-lg">
           Highlights from our training sessions, workshops, and collaborative learning experiences.
         </p>
 
-        {/* Collage grid */}
-        <div className="mt-12 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+        {/* Collage grid — 2 cols on mobile, 2 on sm, 4 on lg with masonry */}
+        <div className="mt-10 grid grid-cols-2 gap-2 sm:gap-3 lg:grid-cols-4">
           {/* Row 1: 2 tall + 2 normal */}
-          <div className="sm:row-span-2">
+          <div className="row-span-2">
             <div className="group h-full overflow-hidden rounded border border-border transition-all duration-300 hover:border-accent/30 hover:shadow-[0_0_20px_rgba(74,222,128,0.06)]">
               <img
                 src={galleryImages[0].src}
@@ -374,7 +374,7 @@ export default function AcademyPage() {
               />
             </div>
           </div>
-          <div>
+          <div className="hidden lg:block">
             <div className="group overflow-hidden rounded border border-border transition-all duration-300 hover:border-accent/30 hover:shadow-[0_0_20px_rgba(74,222,128,0.06)]">
               <img
                 src={galleryImages[2].src}
@@ -384,7 +384,7 @@ export default function AcademyPage() {
               />
             </div>
           </div>
-          <div className="sm:row-span-2">
+          <div className="row-span-2 hidden lg:block">
             <div className="group h-full overflow-hidden rounded border border-border transition-all duration-300 hover:border-accent/30 hover:shadow-[0_0_20px_rgba(74,222,128,0.06)]">
               <img
                 src={galleryImages[3].src}
@@ -395,7 +395,7 @@ export default function AcademyPage() {
             </div>
           </div>
 
-          {/* Row 2: fills remaining 2 middle columns */}
+          {/* Row 2 */}
           <div>
             <div className="group overflow-hidden rounded border border-border transition-all duration-300 hover:border-accent/30 hover:shadow-[0_0_20px_rgba(74,222,128,0.06)]">
               <img
@@ -406,7 +406,7 @@ export default function AcademyPage() {
               />
             </div>
           </div>
-          <div>
+          <div className="hidden lg:block">
             <div className="group overflow-hidden rounded border border-border transition-all duration-300 hover:border-accent/30 hover:shadow-[0_0_20px_rgba(74,222,128,0.06)]">
               <img
                 src={galleryImages[5].src}
@@ -417,8 +417,8 @@ export default function AcademyPage() {
             </div>
           </div>
 
-          {/* Row 3: 2 wide images */}
-          <div className="sm:col-span-2">
+          {/* Row 3: wide images */}
+          <div className="col-span-2">
             <div className="group overflow-hidden rounded border border-border transition-all duration-300 hover:border-accent/30 hover:shadow-[0_0_20px_rgba(74,222,128,0.06)]">
               <img
                 src={galleryImages[6].src}
@@ -428,7 +428,7 @@ export default function AcademyPage() {
               />
             </div>
           </div>
-          <div className="sm:col-span-2">
+          <div className="col-span-2">
             <div className="group overflow-hidden rounded border border-border transition-all duration-300 hover:border-accent/30 hover:shadow-[0_0_20px_rgba(74,222,128,0.06)]">
               <img
                 src={galleryImages[7].src}
@@ -444,19 +444,19 @@ export default function AcademyPage() {
       <div className="h-px bg-gradient-to-r from-transparent via-accent/15 to-transparent" />
 
       {/* CTA */}
-      <section className="relative bg-background-alt px-4 py-20 sm:px-6">
+      <section className="relative bg-background-alt px-4 py-12 sm:px-6 sm:py-20">
         <div className="pointer-events-none absolute inset-0 bg-grid-dot opacity-20" />
         <div className="relative mx-auto max-w-3xl text-center">
           <p className="mb-3 font-mono text-[10px] uppercase tracking-[0.3em] text-accent/40">
             // Get Started
           </p>
-          <h2 className="text-4xl font-bold text-foreground-bright">
+          <h2 className="text-2xl font-bold text-foreground-bright sm:text-3xl md:text-4xl">
             Ready to Build the Future of Cities?
           </h2>
-          <p className="mx-auto mt-4 max-w-2xl text-lg text-muted">
+          <p className="mx-auto mt-4 max-w-2xl text-base text-muted sm:text-lg">
             Join CitySage Academy and gain the skills to lead responsible AI-driven urban transformation.
           </p>
-          <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
+          <div className="mt-6 flex flex-col items-center justify-center gap-3 sm:mt-8 sm:flex-row sm:gap-4">
             <Link
               href="/contact"
               className="rounded border border-accent/50 bg-accent/10 px-8 py-3 font-mono text-sm font-semibold text-accent transition-all hover:bg-accent/20 hover:shadow-[0_0_25px_rgba(74,222,128,0.2)]"

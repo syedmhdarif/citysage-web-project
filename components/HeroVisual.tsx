@@ -1,6 +1,6 @@
 export default function HeroVisual() {
   return (
-    <div className="relative mx-auto w-[80%] max-w-sm pb-5">
+    <div className="relative mx-auto w-full max-w-xs pb-5 sm:w-[80%] sm:max-w-sm">
       {/* Ambient mint glow behind the image */}
       <div
         className="absolute inset-0 -inset-x-8 -inset-y-8 rounded-full blur-3xl opacity-[0.12]"

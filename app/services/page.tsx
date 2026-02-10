@@ -41,8 +41,8 @@ export default function ServicesPage() {
         <div className="pointer-events-none absolute inset-0 bg-grid-dot opacity-20" />
         <div className="relative mx-auto max-w-4xl">
           <p className="mb-3 text-center font-mono text-[10px] uppercase tracking-[0.3em] text-accent/40">// Process</p>
-          <h2 className="text-center text-4xl font-bold text-foreground-bright">How We Work</h2>
-          <div className="mt-12 grid gap-8 sm:grid-cols-3">
+          <h2 className="text-center text-2xl font-bold text-foreground-bright sm:text-3xl md:text-4xl">How We Work</h2>
+          <div className="mt-10 grid gap-8 sm:grid-cols-2 md:grid-cols-3">
             {[
               { step: "01", title: "Discover", desc: "We audit existing data sources, infrastructure, and pain points to build a baseline understanding." },
               { step: "02", title: "Design", desc: "Our team architects a tailored solution combining AI workers, dashboards, and IoT integrations." },
