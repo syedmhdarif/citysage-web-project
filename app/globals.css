@@ -131,6 +131,28 @@ body {
   100% { transform: scale(0.8); opacity: 0.3; }
 }
 
+@keyframes float-emoji {
+  0%, 100% { transform: translateY(0) rotate(0deg) scale(1); }
+  25% { transform: translateY(-18px) rotate(8deg) scale(1.1); }
+  50% { transform: translateY(-6px) rotate(-3deg) scale(1.05); }
+  75% { transform: translateY(14px) rotate(-8deg) scale(0.95); }
+}
+
+@keyframes pcb-flow {
+  0% { stroke-dashoffset: 1000; }
+  100% { stroke-dashoffset: 0; }
+}
+
+@keyframes pcb-flow-reverse {
+  0% { stroke-dashoffset: 0; }
+  100% { stroke-dashoffset: 1000; }
+}
+
+@keyframes via-ping {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 1; }
+}
+
 .animate-glow-pulse {
   animation: glow-pulse 3s ease-in-out infinite;
 }

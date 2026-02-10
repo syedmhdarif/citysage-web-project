@@ -1,3 +1,10 @@
+const floatingEmojis = [
+  // { emoji: "🤖", pos: "-top-4 -left-4 text-2xl sm:text-3xl", duration: "4s", delay: "0s" },
+  { emoji: "🚀", pos: "-top-2 -right-3 text-xl sm:text-5xl", duration: "5s", delay: "1s" },
+  // { emoji: "🛰️", pos: "top-1/3 -right-6 sm:-right-8 text-lg sm:text-2xl", duration: "4.5s", delay: "1.8s" },
+  { emoji: "⚡", pos: "bottom-1/5 -left-7 sm:-left-10 text-lg sm:text-4xl", duration: "5.5s", delay: "0.5s" },
+];
+
 export default function HeroVisual() {
   return (
     <div className="relative mx-auto w-full max-w-xs pb-5 sm:w-[80%] sm:max-w-sm">
@@ -7,8 +14,21 @@ export default function HeroVisual() {
         style={{ background: "radial-gradient(circle, rgba(74,222,128,0.5) 0%, transparent 70%)" }}
       />
 
+      {/* Floating AI emojis */}
+      {floatingEmojis.map(({ emoji, pos, duration, delay }) => (
+        <span
+          key={emoji}
+          className={`pointer-events-none absolute z-10 drop-shadow-[0_0_8px_rgba(74,222,128,0.4)] ${pos}`}
+          style={{
+            animation: `float-emoji ${duration} ease-in-out ${delay} infinite`,
+          }}
+        >
+          {emoji}
+        </span>
+      ))}
+
       {/* Image container */}
-      <div className="relative overflow-hidden rounded-4xl border border-accent/15 shadow-[0_0_40px_rgba(74,222,128,0.08)]">
+      <div className="relative overflow-hidden rounded-4xl border border-accent/15 shadow-[0_0_40px_rgba(74,222,128,0.25)]">
         <img
           src="https://citysage.my/wp-content/uploads/2025/01/C-Rose-Video-ezgif.com-optimize.gif"
           alt="C-Rose — Geospatial AI Agent by CitySage"
