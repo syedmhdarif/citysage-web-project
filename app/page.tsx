@@ -4,6 +4,7 @@ import Hero from "@/components/Hero";
 import Card from "@/components/Card";
 import EmbedFrame from "@/components/EmbedFrame";
 import HeroVisual from "@/components/HeroVisual";
+import InstagramFeed from "@/components/InstagramFeed";
 import { services, aiWorkers, projects } from "@/lib/data";
 
 export const metadata: Metadata = {
@@ -211,6 +212,36 @@ export default function Home() {
           </p>
           <div className="mt-10">
             <EmbedFrame src="https://urbandata.my/embed" title="UrbanData AI Chat — Urban Intelligence Engine by CitySage" />
+          </div>
+        </div>
+      </section>
+
+      {/* Divider */}
+      <div className="h-px bg-gradient-to-r from-transparent via-accent/15 to-transparent" />
+
+      {/* Instagram Feed */}
+      <section aria-labelledby="instagram-heading" className="relative bg-background-alt px-4 py-24 sm:px-6">
+        <div className="pointer-events-none absolute inset-0 bg-grid-dot opacity-20" />
+        <div className="relative mx-auto max-w-5xl">
+          <p className="mb-3 text-center font-mono text-[10px] uppercase tracking-[0.3em] text-accent/40">
+            // Follow Us
+          </p>
+          <h2 id="instagram-heading" className="text-center text-4xl font-bold text-foreground-bright">
+            Latest from Instagram
+          </h2>
+          <p className="mx-auto mt-3 max-w-4xl text-center text-lg text-muted">
+            Stay updated with our latest insights on AI-powered urban planning, smart city innovations, and community-driven development.
+          </p>
+          <InstagramFeed />
+          <div className="mt-8 text-center">
+            <a
+              href="https://instagram.com/citysage.my"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 font-mono text-sm text-accent/70 transition-colors hover:text-accent"
+            >
+              @citysage.my &rarr;
+            </a>
           </div>
         </div>
       </section>
