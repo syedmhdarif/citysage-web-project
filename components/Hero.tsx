@@ -1,7 +1,8 @@
 "use client";
 
+import { useRef, useState } from "react";
 import Link from "next/link";
-import { motion } from "framer-motion";
+import { motion, useMotionValue, useSpring } from "framer-motion";
 
 interface HeroProps {
   title: string;
@@ -15,9 +16,71 @@ interface HeroProps {
 
 export default function Hero({ title, subtitle, label, layout = "center", primaryCta, secondaryCta, children }: HeroProps) {
   const isSplit = layout === "split";
+  const sectionRef = useRef<HTMLElement>(null);
+  const [cursorVisible, setCursorVisible] = useState(false);
+
+  const mouseX = useMotionValue(0);
+  const mouseY = useMotionValue(0);
+  const springX = useSpring(mouseX, { stiffness: 150, damping: 20, mass: 0.5 });
+  const springY = useSpring(mouseY, { stiffness: 150, damping: 20, mass: 0.5 });
+
+  function handleMouseMove(e: React.MouseEvent<HTMLElement>) {
+    const rect = sectionRef.current?.getBoundingClientRect();
+    if (!rect) return;
+    mouseX.set(e.clientX - rect.left);
+    mouseY.set(e.clientY - rect.top);
+  }
 
   return (
-    <section className="relative overflow-hidden bg-surface px-4 py-28 sm:px-6 lg:py-36">
+    <section
+      ref={sectionRef}
+      onMouseMove={handleMouseMove}
+      onMouseEnter={() => setCursorVisible(true)}
+      onMouseLeave={() => setCursorVisible(false)}
+      className="relative overflow-hidden bg-surface px-4 py-28 sm:px-6 lg:py-36"
+    >
+      {/* ── Glass glyph cursor follower ── */}
+      <motion.div
+        className="pointer-events-none absolute z-10 hidden lg:block"
+        style={{ left: springX, top: springY, x: "-50%", y: "-50%" }}
+        animate={{ opacity: cursorVisible ? 1 : 0, scale: cursorVisible ? 1 : 0.6 }}
+        transition={{ opacity: { duration: 0.25 }, scale: { duration: 0.3 } }}
+      >
+        {/* Outer glow */}
+        <div className="absolute -inset-6 rounded-full bg-accent/5 blur-2xl" />
+        {/* Glass hexagon shape */}
+        <svg width="48" height="48" viewBox="0 0 48 48" className="drop-shadow-[0_0_14px_rgba(74,222,128,0.3)]">
+          <defs>
+            <linearGradient id="hex-fill" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stopColor="rgba(74,222,128,0.12)" />
+              <stop offset="100%" stopColor="rgba(56,189,248,0.08)" />
+            </linearGradient>
+            <linearGradient id="hex-stroke" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stopColor="rgba(74,222,128,0.45)" />
+              <stop offset="100%" stopColor="rgba(56,189,248,0.3)" />
+            </linearGradient>
+            <linearGradient id="hex-inner-stroke" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stopColor="rgba(74,222,128,0.2)" />
+              <stop offset="100%" stopColor="rgba(56,189,248,0.12)" />
+            </linearGradient>
+          </defs>
+          <polygon
+            points="24,2 44,14 44,34 24,46 4,34 4,14"
+            fill="url(#hex-fill)"
+            stroke="url(#hex-stroke)"
+            strokeWidth="1"
+          />
+          <polygon
+            points="24,10 36,17 36,31 24,38 12,31 12,17"
+            fill="rgba(74,222,128,0.04)"
+            stroke="url(#hex-inner-stroke)"
+            strokeWidth="0.5"
+          />
+          {/* Center dot */}
+          <circle cx="24" cy="24" r="2" fill="rgba(74,222,128,0.6)" />
+        </svg>
+      </motion.div>
+
       {/* ── Animated background layers ── */}
 
       {/* Floating mint orbs */}
@@ -158,7 +221,7 @@ export default function Hero({ title, subtitle, label, layout = "center", primar
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="mx-auto mt-6 max-w-4xl text-lg leading-relaxed text-muted"
+            className="mx-auto mt-6 max-w-4xl text-xl leading-relaxed text-muted"
           >
             {subtitle}
           </motion.p>

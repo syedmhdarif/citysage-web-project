@@ -26,7 +26,7 @@ export default function AIWorkersPage() {
       />
 
       <section className="mx-auto max-w-7xl px-4 py-20 sm:px-6">
-        <div className="grid gap-8 sm:grid-cols-2">
+        <div className="grid gap-8 sm:grid-cols-3">
           {aiWorkers.map((w) => (
             <Link key={w.slug} href={`/ai-workers/${w.slug}`} className="group">
               <div className="relative flex h-full flex-col overflow-hidden rounded border border-border bg-card transition-all duration-300 hover:border-accent/30 hover:shadow-[0_0_20px_rgba(74,222,128,0.06)]">
@@ -34,7 +34,7 @@ export default function AIWorkersPage() {
                 <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-transparent to-transparent transition-all duration-300 group-hover:via-accent/40" />
 
                 {/* GIF image */}
-                <div className="relative aspect-[2/1] w-full overflow-hidden bg-background">
+                <div className="relative aspect-[1.2/1] w-full overflow-hidden bg-background">
                   <img
                     src={w.image}
                     alt={`${w.name} — ${w.role} AI agent by CitySage`}
