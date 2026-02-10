@@ -188,6 +188,7 @@ export default function Home() {
               title={p.title}
               description={p.description}
               badge={p.category}
+              image={p.image}
               href="/project"
             />
           ))}

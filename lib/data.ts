@@ -19,6 +19,8 @@ export interface Project {
   title: string;
   description: string;
   category: string;
+  image: string;
+  client: string;
 }
 
 // ─── AI Workers ───────────────────────────────────────────────
@@ -172,40 +174,44 @@ export const services: Service[] = [
 // ─── Projects ─────────────────────────────────────────────────
 export const projects: Project[] = [
   {
-    title: "KL Smart Waste Pilot",
+    title: "MD Analytics AI Copilot",
     description:
-      "Deployed 500+ smart-bin sensors across Kuala Lumpur, cutting collection costs by 28% and reducing overflow incidents by 41%.",
-    category: "Waste Management",
+      "CitySage enhanced MD Analytics 2.0 with the CitySage AI Copilot, a bilingual conversational agent built with LLMs, RAG, and hybrid connectors. It delivers fast, natural Q&A over KPIs, dashboards, and maps across eight urban use cases, significantly accelerating time-to-insight for city councils.",
+    category: "Agentic AI Module",
+    image: "https://citysage.my/wp-content/uploads/2025/12/1.png",
+    client: "Map2U",
   },
   {
-    title: "Penang Transit Optimisation",
+    title: "KLUO RoadSense",
     description:
-      "Re-routed 12 bus lines using C-Kimi's mobility engine, improving average commute times by 19% for 120,000 daily riders.",
-    category: "Mobility",
+      "CitySage collaborated with Map2U to advance an Urban Observatory for a Klang Valley city council. Two AI solutions were delivered: a 3D AI Digital Twin for city planning and analytics, and a Road Asset AI Model for automated road asset detection and defect classification such as potholes.",
+    category: "Consultation & AI Module Development",
+    image: "https://citysage.my/wp-content/uploads/2025/12/2.png",
+    client: "City Council",
   },
   {
-    title: "Johor Bahru Air-Quality Network",
+    title: "MUO — NSCP 2.0 Smart City Platform",
     description:
-      "Installed a 30-node air-quality sensor mesh and built a public dashboard powered by C-Verde for real-time AQI alerts.",
-    category: "Environment",
+      "As Map2U's strategic AI partner, CitySage is building the Agentic AI layer for MUO/NSCP 2.0, Malaysia's national smart city data backbone. Digital workers automate key workflows including Smart City ratings and reporting, supporting ministries, state agencies, and local authorities with scalable, intelligent operations.",
+    category: "Agentic AI & Workflow Automation",
+    image: "https://citysage.my/wp-content/uploads/2025/12/3.png",
+    client: "Map2U",
   },
   {
-    title: "Cyberjaya Smart Campus",
+    title: "JUPEM — MyCartoGo Enhancements",
     description:
-      "Integrated building management, energy monitoring, and access control for a 50-acre tech campus, reducing energy spend by 35%.",
-    category: "Infrastructure",
+      "CitySage is developing next-generation AI capabilities for MyCartoGo's Tourism, Activity, and Topography modules. The scope includes multilingual travel copilots, AR-assisted guidance, smart activity insights, and predictive route planning, elevating user experience for tourists, residents, and outdoor communities.",
+    category: "Consultation, AI & Advanced Analytics",
+    image: "https://citysage.my/wp-content/uploads/2025/12/4.png",
+    client: "Map2U",
   },
   {
-    title: "Putrajaya Digital Twin",
+    title: "SCOUT — JCorp Supply Chain Control Tower",
     description:
-      "Created a city-scale digital twin combining GIS, IoT, and AI layers for scenario planning and disaster preparedness.",
-    category: "Planning",
-  },
-  {
-    title: "Iskandar Malaysia Green Corridor",
-    description:
-      "Mapped and monitored 80 km of urban green corridors, informing biodiversity-friendly development guidelines.",
-    category: "Environment",
+      "SCOUT (Supply Chain Optimization & Unified Tech) is an Agentic AI-powered logistics control tower designed for Johor Corporation's diverse business verticals. CitySage delivered the consulting and operational mockup showcasing real-time visibility, exception management, and unified supply chain optimization across Agribusiness, Healthcare, F&B, and Real Estate domains.",
+    category: "AI-Driven Supply Chain Transformation",
+    image: "https://citysage.my/wp-content/uploads/2025/12/5.png",
+    client: "Johor Corporation",
   },
 ];
 
