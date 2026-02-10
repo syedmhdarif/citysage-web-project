@@ -1,0 +1,33 @@
+# CitySage — AI-Powered Urban Intelligence Platform
+# https://citysage.my
+
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://citysage.my/sitemap.xml
+
+# Crawl-delay for polite crawling
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Amazonbot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: cohere-ai
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
