@@ -268,11 +268,19 @@ export default function Home() {
           <p className="text-center font-mono text-[10px] uppercase tracking-[0.3em] text-muted-foreground">
             // Trusted by Municipalities &amp; Institutions
           </p>
+          <div className="mx-auto mt-6 max-w-4xl sm:mt-8">
+            <img
+              src={`${process.env.__NEXT_ROUTER_BASEPATH || ""}/partners/trustedTeam.png`}
+              alt="Trusted partners and institutions — CitySage collaborations"
+              className="w-full object-contain"
+              loading="lazy"
+            />
+          </div>
           <div className="mt-6 flex flex-wrap items-center justify-center gap-2.5 sm:mt-8 sm:gap-4">
-            {["DBKL", "Penang State Gov", "MDEC", "Iskandar Regional Dev Authority", "UTM", "UMPSA"].map((name) => (
+            {["Microsoft", "Google", "MDEC", "AWS", "MSCA", "PlanMalaysia", "Cradle", "Sidec"].map((name) => (
               <span
                 key={name}
-                className="rounded border border-border/60 px-3 py-1.5 font-mono text-[10px] uppercase tracking-wider text-muted-foreground transition-colors hover:border-accent/20 hover:text-muted sm:px-4 sm:py-2 sm:text-[11px]"
+                className="rounded border border-border/60 px-3 py-1.5 font-mono text-[10px] uppercase tracking-wider text-muted-foreground transition-colors hover:border-accent/20 hover:text-muted sm:px-4 sm:py-2 sm:text-[14px]"
               >
                 {name}
               </span>
